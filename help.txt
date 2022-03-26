@@ -1,0 +1,7 @@
+Note: Type # and write, it will be saved in the 'register' file.
+showMobs: Type 'mobs' to see all characters loaded in the buffer.
+addMobs: Type '!add' to add mobs to the buffer. These will be lost when you close the program.
+setInitiative: Type 'combat' and give each character in the buffer its initiative.
+Quit: Type 'quit' or 'end' or 'done' to quit. A confirmation message will pop up.
+Experience: Type 'E' or 'e' followed by a number ('E100'). This will be recorded in the 'register' file and the summ of all experience will be shown before you quit.
+Gold: Type 'G' to roll 1d10 gold coins, or 'g' to roll 1d6 gold coins. You can stack the number of dice and combine them (GGgg = 2d10 + 2d6). You can also add a set number by typing '+' followed by the number. You can mix all this commands as you want, but adding the set number must be done at the end.
