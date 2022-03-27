@@ -79,4 +79,4 @@ async def Clean():
         if message.author == client.user:
             await message.delete()
 
-client.run('OTUxMjM5NDgwMzQwMjgzNDcz.YikkzQ.hTdiV1Qu1VzaN303ub08jZxhF20')
+client.run('')
