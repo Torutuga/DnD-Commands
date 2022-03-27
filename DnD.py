@@ -5,8 +5,9 @@ import random, datetime
 import os
 from colorama import Fore, Back, Style, init
 
+path = os.getcwd()
 init(autoreset=True)
-book = load_workbook('C:/Users/hp/dnd/DnD.xlsx')
+book = load_workbook(path+'\DnD.xlsx')
 sheet1 = book['nameGen']
 
 class Mob:
@@ -29,9 +30,9 @@ def SelectAdventure():
 
     answer = input('Write the name of your adventure\n')
     adventure = answer
-    file0 = open(f'C:/users/hp/dnd/{adventure}_player.txt', 'a')
+    file0 = open(path + '\{adv}_player.txt'.format(adv=adventure), 'a')
     file0.close()
-    file1 = open(f'C:/users/hp/dnd/{adventure}_register.txt', 'a')
+    file1 = open(path + '\{adv}_register.txt'.format(adv=adventure), 'a')
     file1.close()
 
 def AcquirePlayers():
@@ -46,7 +47,7 @@ def AcquirePlayers():
         menu1, menu0 = True, True
 
     if x == '2':
-        file1 = open(f'C:/users/hp/dnd/{adventure}_player.txt', 'r')
+        file1 = open(path + '\{adv}_player.txt'.format(adv=adventure), 'r')
         p = []
         for line in file1.readlines():
             p.append(line)
@@ -74,7 +75,7 @@ def AcquirePlayers():
 
             y = input('Save the Character? y/n\n...')
             if y == 'y':
-                file1 = open(f'C:/Users/hp/DnD/{adventure}_player.txt', 'a')
+                file1 = open(path + '\{adv}_player.txt'.format(adv=adventure), 'a')
                 file1.write(f'{p[0]},{p[1]},{p[2]}' + '\n')
                 file1.close()
 
@@ -142,7 +143,7 @@ def showMobs(s):
 
 def help(s):
     if s == '!help':
-        r = open('C:/Users/hp/dnd/help.txt', 'r')
+        r = open(path + '\help.txt', 'r')
         for line in r.readlines():
             print(line)
 
@@ -205,7 +206,7 @@ def Quit(x, file):
 
 SelectAdventure()
 
-file = open(f"C:/Users/hp/DnD/{adventure}_register.txt", "a")
+file = open(path + '\{adv}_register.txt'.format(adv=adventure), "a")
 now = datetime.datetime.now()
 file.write(now.strftime('%Y %m %d :: %H:%M') + '\n')
 print(now.strftime('%Y %m %d :: %H:%M'))
@@ -224,7 +225,7 @@ print('\n')
 run = True    
 while run:
 
-    file = open(f"C:/Users/hp/DnD/{adventure}_register.txt", "a")
+    file = open(path + '\{adv}_register.txt'.format(adv=adventure), "a")
     
     x = input('...')
 
